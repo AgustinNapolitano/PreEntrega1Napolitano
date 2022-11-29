@@ -1,4 +1,5 @@
 import PropType from 'prop-types'
+import Cartwidget from '../CartWidget'
 
 const Navbar = ({menus,children}) =>{
     return(
@@ -11,6 +12,7 @@ const Navbar = ({menus,children}) =>{
             }
             </div>
             <div>
+                <Cartwidget></Cartwidget>
                 {children}
             </div>
         </div>
