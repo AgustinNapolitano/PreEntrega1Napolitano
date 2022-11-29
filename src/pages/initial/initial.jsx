@@ -1,6 +1,6 @@
 import Layout from '../../Components/Layout'
 import Navbar from '../../Components/NavBar';
-import List from '../../Components/List';
+import Itemlistcontainer from '../../Components/ItemListContainer';
 import Cartwidget from '../../Components/CartWidget';
 
 
@@ -12,7 +12,7 @@ const Initial=() =>{
       
       <Layout>
         <Navbar menus={menu}><Cartwidget></Cartwidget></Navbar>
-      <List  listas ={Productos}/>
+      <Itemlistcontainer  listas ={Productos}/>
 
       </Layout>
     )

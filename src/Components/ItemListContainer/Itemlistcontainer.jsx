@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-const List = ({listas})=>{
+const Itemlistcontainer = ({listas})=>{
     return(
         <div className='list'>
             {
@@ -12,8 +12,8 @@ const List = ({listas})=>{
     )
 }
 
-List.prototype = {
+Itemlistcontainer.prototype = {
     listas: PropTypes.array.isRequired
 }
 
-export default List;
+export default Itemlistcontainer;
