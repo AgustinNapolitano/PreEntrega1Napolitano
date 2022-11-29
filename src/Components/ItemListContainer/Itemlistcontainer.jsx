@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 const Itemlistcontainer = ({listas})=>{
     return(
-        <div className='list'>
+        <div id='list' className='list'>
             {
                 listas.map((lista)=>{
                     return <p>{lista}</p>

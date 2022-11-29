@@ -5,7 +5,7 @@ import Itemlistcontainer from '../../Components/ItemListContainer';
 
 const Initial=() =>{
   const menu = ['Inicio','Productos','Contactanos']
-  const Productos = ['BIENVENIDO AGUSTÍN NAPOLITANO']
+  const Productos = ['AGREGAR PRODUCTOS']
 
     return(
       
