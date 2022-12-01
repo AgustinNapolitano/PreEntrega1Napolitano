@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import './Itemlistcontainer.scss'
 
 const Itemlistcontainer = ({listas})=>{
     return(
