@@ -1,4 +1,12 @@
-.list{
-    background-color: aqua;
-    margin-left: 30px;
+.itemlistcontainer{
+    display: flex;
+    margin-top: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
 }
+
+.itemlistcontainer__producto{
+    margin-left: 16px;
+    margin-right: 16px;
+}
+

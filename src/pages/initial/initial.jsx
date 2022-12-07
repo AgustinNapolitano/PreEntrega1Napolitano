@@ -1,35 +1,23 @@
 import Layout from '../../Components/Layout'
 import Navbar from '../../Components/NavBar';
-import Itemlistcontainer from '../../Components/ItemListContainer';
+import ItemListContainer from '../../Components/ItemListContainer';
+import ItemDetailContainer from '../../Components/ItemDetailContainer';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import Home from '../../Components/Home';
 import Contacto from '../../Components/Contacto'
+import {categorias,menu} from '../../mock'
 
 
 const Initial=() =>{
-  const menu = [{
-    name:'Inicio',
-    href:'/'
-  },
-  {
-    name:'Productos',
-    href:'/productos'
-  },
-  {
-    name:'Contacto',
-    href:'/contacto'
-  }
-]
-  const Productos = ['AGREGAR PRODUCTOS']
 
     return(
       <BrowserRouter> 
       <Layout>
-        <Navbar menus={menu}></Navbar>
+        <Navbar menus={menu} categorias={categorias}></Navbar>
         <Routes> 
-          <Route exact path='/' element={<Home/>}/>
-          <Route exact path='/productos' element={<Itemlistcontainer/>}/>
+          <Route exact path='/' element={<ItemListContainer/>}/>
           <Route exact path='/contacto' element={<Contacto/>}/>
+          <Route exact path='/category/:id' element={<ItemListContainer/>}/>
+          <Route exact path='/item/:id' element={<ItemDetailContainer/>}/>
         </Routes>
       
 

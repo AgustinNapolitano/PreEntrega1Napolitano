@@ -1,20 +1,37 @@
-import PropTypes from 'prop-types'
-import './Itemlistcontainer.scss'
+import {Productos, categorias} from '../../mock';
+import Item from '../Item';
+import PropTypes from 'prop-types';
+import './ItemListContainer.scss';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const Itemlistcontainer = ({listas})=>{
+const ItemListContainer = () =>{
+    const [item,setItem] = useState(Productos);
+    const { id } = useParams()
+
+    const FilterCategory = new Promise((resolve,eject)=>{
+        setTimeout(()=>{
+            const newProductos = Productos.filter((p)=> p.category == id)
+            resolve(newProductos)
+        },2000)
+    })
+
+    useEffect(()=>{
+        FilterCategory.then((response)=>{
+            setItem(response)
+        })
+    },[id])
     return(
-        <div id='list' className='list'>
-            {
-                listas.map((lista)=>{
-                    return <p>{lista}</p>
-                })
-            }
+        <div className='itemlistcontainer'>
+        {
+            item.map((producto)=>{
+                return <Item producto={producto}/>
+            })
+        }
         </div>
     )
 }
 
-Itemlistcontainer.prototype = {
-    listas: PropTypes.array.isRequired
-}
 
-export default Itemlistcontainer;
+export default ItemListContainer;

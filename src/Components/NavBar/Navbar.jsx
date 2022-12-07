@@ -1,13 +1,20 @@
 import PropType from 'prop-types'
 import Cartwidget from '../CartWidget'
+import { Link } from 'react-router-dom';
 
-const Navbar = ({menus,children}) =>{
+const Navbar = ({menus,categorias,children}) =>{
     return(
         <div className='navbar'>
             <div className='navbar__menus'>
             {
                 menus.map((menu)=>{
-                    return <a href={menu.href} className='navbar__menu'>{menu.name}</a>
+                    return <Link className='navbar__menu' to={menu.href} >{menu.name}</Link>
+                })
+            },
+            {
+                categorias.map((categoria)=>{
+                    return <Link className='navbar__category' to={`/category/${categoria.id}`}>
+                {categoria.name}</Link>
                 })
             }
             </div>
